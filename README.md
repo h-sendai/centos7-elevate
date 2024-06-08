@@ -1,12 +1,14 @@
 # centos7-elevate
 
 CentOS 7をAlmaLinuxの
-[https://wiki.almalinux.org/elevate/](elevate)
+[elevate](https://wiki.almalinux.org/elevate/)
 を使ってAlmaLinux 8へアップグレードするときのメモ。
 
 ## 解説文書
-- [https://wiki.almalinux.org/elevate/ELevating-CentOS7-to-AlmaLinux-9.html](Quick Guide)
-- [https://wiki.almalinux.org/elevate/ELevating-CentOS7-to-AlmaLinux-9.html#migrate-centos-7-to-almalinux-8](CentOS 7 to AlmaLinux 8)
+
+- [Quick Guide](https://wiki.almalinux.org/elevate/ELevating-CentOS7-to-AlmaLinux-9.html)
+- [CentOS 7 to AlmaLinux 8](https://wiki.almalinux.org/elevate/ELevating-CentOS7-to-AlmaLinux-9.html#migrate-centos-7-to-almalinux-8)
+
 
 ## 準備
 
