@@ -31,6 +31,12 @@ sudo dnf -y update
 sudo reboot
 ```
 
+サービスを停止しておく:
+```
+systemctl stop httpd
+systemctl disable httpd
+```
+
 elevate-releaseのインストール:
 ```
 sudo yum install -y http://repo.almalinux.org/elevate/elevate-release-latest-el$(rpm --eval %rhel).noarch.rpm
@@ -112,3 +118,20 @@ rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n'
 ```
 ででてくる古いGPGキーを消す。実行するにはこのコマンドででてくる第1
 コラムを引数にしてrpm -eで消す。
+
+``*.rpmnew``、``*.rpmsave``ファイルを探し、対応する:
+```
+find / -name '*.rpmnew' -or -name '*.rpmsave'
+```
+
+``rpm -V``でパッケージファイルのチェックサムを調べて変更があった
+ファイルを把握する:
+
+```
+sudo -s
+for i in $(rpm -qa); do
+    echo $i
+    rpm -V $i >> /tmp/checkpackages.log
+done
+```
+
