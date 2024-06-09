@@ -22,7 +22,7 @@ CentOS 7をAlmaLinuxの
 CentOS 7でアップデートしておく:
 
 ```
-sudo dnf -y update
+sudo yum -y update
 ```
 
 一旦リブートしてリブート可能かどうか確認しておくのがよい。
