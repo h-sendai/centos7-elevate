@@ -84,9 +84,11 @@ sudo reboot
 そのままこれを起動する。
 作業が終わると自動でリブートされる。
 
-リブート後CentOS 7のパッケージが残っていないかどうか確認する:
+リブート後CentOS 7のパッケージ、elevate (leapp)パッケージが残っていないかどうか確認する:
 ```
 sudo rpm -qa | grep el7
+sudo rpm -qa | grep elevate
+sudo rpm -qa | grep leapp
 ```
 
 ``/etc/dnf/dnf.conf``でelevate関連パッケージがexclude行に指定されているので
@@ -103,6 +105,8 @@ sudo rpm -qa | grep el7
 
 ```
 sudo dnf remove $(rpm -qa | grep el7)
+sudo dnf remove $(rpm -qa | grep elevate)
+sudo dnf remove $(rpm -qa | grep leapp)
 ```
 
 ```
