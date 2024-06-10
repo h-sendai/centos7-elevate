@@ -120,8 +120,22 @@ sudo dnf clean all
 ```
 rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n'
 ```
-ででてくる古いGPGキーを消す。実行するにはこのコマンドででてくる第1
-コラムを引数にしてrpm -eで消す。
+ででてくるCentOSのGPGキーを消す。実行するにはこのコマンドででてくるCentOS
+の行の第1コラムを引数にしてrpm -eで消す。例:
+
+```console
+# rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n'
+gpg-pubkey-f4a80eb5-53a7ff4b	gpg(CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>)
+gpg-pubkey-81b961a5-64106f70	gpg(ELevate <packager@almalinux.org>)
+gpg-pubkey-3abb34f8-5ffd890e	gpg(AlmaLinux <packager@almalinux.org>)
+gpg-pubkey-ced7258b-6525146f	gpg(AlmaLinux OS 8 <packager@almalinux.org>)
+# rpm -e gpg-pubkey-f4a80eb5-53a7ff4b
+# rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n'
+gpg-pubkey-81b961a5-64106f70	gpg(ELevate <packager@almalinux.org>)
+gpg-pubkey-3abb34f8-5ffd890e	gpg(AlmaLinux <packager@almalinux.org>)
+gpg-pubkey-ced7258b-6525146f	gpg(AlmaLinux OS 8 <packager@almalinux.org>)
+```
+ELevate <packager@almalinux.org>はそのままでもいいだろう。
 
 ``*.rpmnew``、``*.rpmsave``ファイルを探し、対応する:
 ```
