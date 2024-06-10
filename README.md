@@ -135,7 +135,7 @@ gpg-pubkey-81b961a5-64106f70	gpg(ELevate <packager@almalinux.org>)
 gpg-pubkey-3abb34f8-5ffd890e	gpg(AlmaLinux <packager@almalinux.org>)
 gpg-pubkey-ced7258b-6525146f	gpg(AlmaLinux OS 8 <packager@almalinux.org>)
 ```
-ELevate <packager@almalinux.org>はそのままでもいいだろう。
+``ELevate <packager@almalinux.org>``はそのままでもいいだろう。
 
 ``*.rpmnew``、``*.rpmsave``ファイルを探し、対応する:
 ```
